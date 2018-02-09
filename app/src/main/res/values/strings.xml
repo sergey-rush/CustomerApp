@@ -3,6 +3,14 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
+    <!-- Splash fragment -->
+    <string name="background_image">Фон</string>
+    <string name="splash_logo">логотип</string>
+    <!-- Offline fragment -->
+    <string name="you_are_offline">Вы оффлайн</string>
+    <string name="unable_connect">Невозможно подключиться к серверу Фудвам.</string>
+    <string name="check_connection">Проверьте подключение к Интернету и повторите попытку.</string>
+    <string name="retry_connect">Обновить</string>
     <!-- Menu -->
     <string name="nav_main_title">Главная</string>
     <string name="nav_product_list_title">Каталог товаров</string>
@@ -26,6 +34,5 @@
     <string name="box_size">Упаковка</string>
     <string name="sku">Артикул</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

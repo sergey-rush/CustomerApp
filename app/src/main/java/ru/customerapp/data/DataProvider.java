@@ -101,11 +101,7 @@ public class DataProvider extends DataAccess {
         return ret;
     }
 
-    @Override
-    public boolean deleteSections() {
-        int ret = db.delete("Sections", null, null);
-        return ret == 1;
-    }
+
 
     @Override
     public Product getProductById(int id) {
@@ -382,5 +378,11 @@ public class DataProvider extends DataAccess {
     public boolean deleteOrderItemsByOrderId(int orderId) {
         int ret = db.delete("OrderItems", "OrderId = ?", new String[]{String.valueOf(orderId)});
         return ret == 1;
+    }
+
+    @Override
+    public void deleteData() {
+        db.delete("Sections", null, null);
+        db.delete("Products", null, null);
     }
 }

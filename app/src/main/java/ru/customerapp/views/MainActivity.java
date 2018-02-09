@@ -53,16 +53,8 @@ public class MainActivity extends AppCompatActivity
         context = getApplicationContext();
         dataAccess = DataAccess.getInstance(context);
         List<Section> sections = dataAccess.getSections();
-        int sectionSize = sections.size();
-        if (sectionSize == 0) {
-            SectionAsyncTask sectionAsyncTask = new SectionAsyncTask();
-            sectionAsyncTask.execute();
-        }
-        else {
-            AppContext appContext = AppContext.getInstance(context);
-            appContext.SectionList = sections;
-        }
-
+        AppContext appContext = AppContext.getInstance(context);
+        appContext.SectionList = sections;
         showFragment(new MainFragment());
     }
 
@@ -133,49 +125,5 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onFragmentInteraction(Uri uri) {
 
-    }
-
-
-    private void loadDataCallback() {
-
-        Toast.makeText(MainActivity.this, "Sections downloaded", Toast.LENGTH_SHORT).show();
-    }
-
-    private class SectionAsyncTask extends AsyncTask<Void, Void, Void> {
-        private SectionAsyncTask() {
-        }
-
-        private ProgressDialog pDialog;
-        private int responseCode;
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            pDialog = new ProgressDialog(MainActivity.this);
-            pDialog.setMessage("Пожалуйста, подождите...");
-            pDialog.setCancelable(false);
-            pDialog.show();
-        }
-
-        @Override
-        protected Void doInBackground(Void... arg0) {
-            SectionProvider sectionProvider = new SectionProvider();
-            responseCode = sectionProvider.getSections();
-            if (responseCode == 200) {
-                WebContext webContext = WebContext.getInstance();
-                dataAccess.addSections(webContext.SectionList);
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            if (pDialog.isShowing()) {
-                pDialog.dismiss();
-            }
-
-            loadDataCallback();
-        }
     }
 }

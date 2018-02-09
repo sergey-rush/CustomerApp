@@ -44,7 +44,6 @@ public abstract class DataAccess extends SQLiteOpenHelper {
 
     public abstract void addSections(List<Section> sections);
 
-    public abstract boolean deleteSections();
 
     public abstract Product getProductById(int id);
 
@@ -75,6 +74,9 @@ public abstract class DataAccess extends SQLiteOpenHelper {
     public abstract int insertOrderItem(OrderItem orderItem);
 
     public abstract boolean deleteOrderItemsByOrderId(int orderId);
+
+    public abstract void deleteData();
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {

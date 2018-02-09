@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/dimen16"
+    tools:context="ru.customerapp.views.OfflineFragment">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+    <ImageView
+        android:id="@+id/ivConnectionLost"
+        android:layout_width="@dimen/dimen128"
+        android:layout_height="@dimen/dimen128"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/unable_connect"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/offline"
+        />
+
+    <TextView
+        android:id="@+id/tvYouAreOffline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ivConnectionLost"
+        android:layout_marginTop="@dimen/dimen4"
+        android:textSize="@dimen/font20"
+        android:textStyle="bold"
+        android:text="@string/you_are_offline" />
+
+    <TextView
+        android:id="@+id/tvUnableConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvYouAreOffline"
+        android:layout_marginTop="@dimen/dimen4"
+        android:layout_marginLeft="@dimen/dimen16"
+        android:layout_marginRight="@dimen/dimen16"
+        android:textAlignment="center"
+        android:text="@string/unable_connect" />
+
+    <TextView
+        android:id="@+id/tvCheckConnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvUnableConnect"
+        android:layout_marginTop="@dimen/dimen4"
+        android:layout_marginLeft="@dimen/dimen16"
+        android:layout_marginRight="@dimen/dimen16"
+        android:layout_marginBottom="@dimen/dimen16"
+        android:textAlignment="center"
+        android:text="@string/check_connection" />
+
+    <Button
+        android:id="@+id/btnRetry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:paddingLeft="@dimen/dimen16"
+        android:paddingRight="@dimen/dimen16"
+        android:background="@color/lightblue"
+        android:layout_below="@id/tvCheckConnection"
+        android:text="@string/retry_connect" android:textStyle="bold"
+        />
+    </RelativeLayout>
+</RelativeLayout>
