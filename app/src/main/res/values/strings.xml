@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Покупатель</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <!-- Menu -->
+    <string name="nav_main_title">Главная</string>
+    <string name="nav_product_list_title">Каталог товаров</string>
+    <string name="nav_cart_title">Корзина</string>
+    <string name="nav_order_list_title">Список заказов</string>
+
+    <!-- Main fragment -->
+    <string name="main_fragment_title">Главная</string>
+    <string name="header1">Ассортимент 16 800 наименований товаров</string>
+    <string name="text1">Регулярные акции и распродажи могут существенно сэкономить Ваш бюджет, а при заказе продуктов с доставкой Вы экономите средства и на бензине, сохраняя свое время и нервы для более важных и действительно нужных дел!</string>
+    <string name="header2">Доставка 24/7</string>
+    <string name="text2">Наши курьеры работают в режиме 24/7, поэтому доставка продуктов на дом в Москве и области осуществляется круглосуточно и даже в праздничные дни. А интервалы доставки сокращены всего до 2-х часов!</string>
+    <string name="header3">Контроль качества</string>
+    <string name="text3">Прямые договоры с ведущими производителями и поставщиками, строгая система контроля качества на этапе приёмки, хранения и транспортировки – ключевые условия, благодаря которым Вы получаете только качественные продукты питания с доставкой на дом.</string>
+
+    <!-- Product List fragment -->
+    <string name="product_list_fragment_title">Товары раздела</string>
+
+    <!-- Product fragment -->
+    <string name="product_fragment_title">Товар</string>
+    <string name="box_size">Упаковка</string>
+    <string name="sku">Артикул</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
