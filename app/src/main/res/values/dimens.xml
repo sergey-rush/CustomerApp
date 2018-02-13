@@ -25,6 +25,7 @@
     <dimen name="dimen100">100dp</dimen>
     <dimen name="dimen128">128dp</dimen>
     <dimen name="dimen150">150dp</dimen>
+    <dimen name="dimen170">170dp</dimen>
     <dimen name="dimen256">256dp</dimen>
     <dimen name="dimen300">300dp</dimen>
 

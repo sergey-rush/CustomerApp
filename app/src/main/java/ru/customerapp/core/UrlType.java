@@ -5,5 +5,5 @@ package ru.customerapp.core;
  */
 
 public enum UrlType {
-    Sections, Products
+    Login, Register, Sections, Products
 }

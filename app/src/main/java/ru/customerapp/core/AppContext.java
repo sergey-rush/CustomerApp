@@ -28,6 +28,7 @@ public class AppContext {
     public List<Section> SectionList;
     public List<Product> ProductList;
     private Order order;
+    public User User;
 
     private static AppContext current;
 

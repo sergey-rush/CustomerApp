@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="ru.customerapp.views.ProfileFragment">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout">
+
+    <ImageView
+        android:id="@+id/header_cover_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen170"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile_header"
+        app:srcCompat="@drawable/profile_header" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civUser"
+        android:layout_below="@+id/header_cover_image"
+        app:civ_border_width="@dimen/dimen2"
+        app:civ_border_color="@color/white"
+        android:layout_width="@dimen/dimen150"
+        android:layout_height="@dimen/dimen150"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-160dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/user" />
+
+    <RelativeLayout
+        android:id="@+id/profile_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_cover_image"
+        android:background="@color/colorAccent"
+        android:padding="@dimen/dimen16">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="Иванов Иван Иванович"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font24" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/profile_layout"
+        android:background="@color/white"
+        android:padding="@dimen/dimen16"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone_number" />
+
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen16"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email_address" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen16"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</RelativeLayout>
+</ScrollView>

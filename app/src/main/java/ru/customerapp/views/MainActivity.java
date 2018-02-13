@@ -55,7 +55,8 @@ public class MainActivity extends AppCompatActivity
         List<Section> sections = dataAccess.getSections();
         AppContext appContext = AppContext.getInstance(context);
         appContext.SectionList = sections;
-        showFragment(new MainFragment());
+        //showFragment(new MainFragment());
+        showFragment(new RegisterFragment());
     }
 
     @Override
@@ -103,6 +104,12 @@ public class MainActivity extends AppCompatActivity
             fragment = new CartFragment();
         } else if (id == R.id.nav_order_list) {
             fragment = new OrderListFragment();
+        } else if (id == R.id.nav_login) {
+            fragment = new LoginFragment();
+        } else if (id == R.id.nav_register) {
+            fragment = new RegisterFragment();
+        } else if (id == R.id.nav_profile) {
+            fragment = new ProfileFragment();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

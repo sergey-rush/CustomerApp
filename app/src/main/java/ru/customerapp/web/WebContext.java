@@ -27,7 +27,7 @@ public class WebContext {
         return current;
     }
 
-    public User User = new User();
+    public User User;
     public String Imei;
     public List<Section> SectionList;
     public List<Product> ProductList;
@@ -36,8 +36,8 @@ public class WebContext {
 
     private WebContext() {
 
-        if (Mode != AppMode.Product) {
-            User = new User(1, "Разработчик приложения", "79267016427", "user@mail.ru", true);
+        if (Mode != AppMode.Product){
+            //User = new User();
         }
         initUrls();
     }
@@ -69,16 +69,22 @@ public class WebContext {
     private void initUrls()
     {
         Map<UrlType, UrlObject> developMap = new HashMap<UrlType, UrlObject>();
+        developMap.put(UrlType.Login, new UrlObject(HttpMethod.POST, "http://10.0.1.99/api/accounts/"));
+        developMap.put(UrlType.Register, new UrlObject(HttpMethod.PUT, "http://10.0.1.99/api/accounts/"));
         developMap.put(UrlType.Sections, new UrlObject(HttpMethod.GET, "http://10.0.1.99/api/sections/"));
         developMap.put(UrlType.Products, new UrlObject(HttpMethod.GET, "http://10.0.1.99/api/products/"));
         urlMap.put(AppMode.Develop, developMap);
 
         Map<UrlType, UrlObject> testMap = new HashMap<UrlType, UrlObject>();
-        testMap.put(UrlType.Sections, new UrlObject(HttpMethod.GET, "http://10.0.1.99/api/sections/"));
-        testMap.put(UrlType.Products, new UrlObject(HttpMethod.GET, "http://10.0.1.99/api/products/"));
+        testMap.put(UrlType.Login, new UrlObject(HttpMethod.POST, "http://10.0.1.99/Metro.Web/api/accounts/"));
+        testMap.put(UrlType.Register, new UrlObject(HttpMethod.PUT, "http://10.0.1.99/Metro.Web/api/accounts/"));
+        testMap.put(UrlType.Sections, new UrlObject(HttpMethod.GET, "http://10.0.1.99/Metro.Web/api/sections/"));
+        testMap.put(UrlType.Products, new UrlObject(HttpMethod.GET, "http://10.0.1.99/api/Metro.Web/products/"));
         urlMap.put(AppMode.Test, testMap);
 
         Map<UrlType, UrlObject> prodMap = new HashMap<UrlType, UrlObject>();
+        prodMap.put(UrlType.Login, new UrlObject(HttpMethod.POST, "http://10.0.1.99/api/accounts/"));
+        prodMap.put(UrlType.Register, new UrlObject(HttpMethod.PUT, "http://10.0.1.99/api/accounts/"));
         prodMap.put(UrlType.Sections, new UrlObject(HttpMethod.GET, "http://10.0.1.99/api/sections/"));
         prodMap.put(UrlType.Products, new UrlObject(HttpMethod.GET, "http://10.0.1.99/api/products/"));
         urlMap.put(AppMode.Product, prodMap);

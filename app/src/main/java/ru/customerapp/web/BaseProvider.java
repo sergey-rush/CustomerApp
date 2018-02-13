@@ -19,6 +19,7 @@ import java.util.List;
 
 import ru.customerapp.core.Product;
 import ru.customerapp.core.Section;
+import ru.customerapp.core.User;
 
 /**
  * Created by rash on 06.02.2018.
@@ -28,6 +29,17 @@ public class BaseProvider {
     protected WebContext webContext = WebContext.getInstance();
 
     protected int responseCode = 0;
+
+    protected User parseToUser(String input) throws JSONException {
+
+        User user = new User();
+        JSONObject resultData = new JSONObject(input);
+        user.UserUid = resultData.getString("UserUid");
+        user.Name = resultData.getString("Name");
+        user.Phone = resultData.getString("Phone");
+        user.Email = resultData.getString("Email");
+        return user;
+    }
 
     protected List<Product> parseToProductList(String input) throws JSONException, ParseException {
         JSONArray items = new JSONArray(input);

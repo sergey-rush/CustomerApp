@@ -16,6 +16,9 @@
     <string name="nav_product_list_title">Каталог товаров</string>
     <string name="nav_cart_title">Корзина</string>
     <string name="nav_order_list_title">Список заказов</string>
+    <string name="nav_registration_title">Регистрация</string>
+    <string name="nav_login_title">Войти</string>
+    <string name="nav_profile_title">Профиль</string>
 
     <!-- Main fragment -->
     <string name="main_fragment_title">Главная</string>
@@ -34,5 +37,23 @@
     <string name="box_size">Упаковка</string>
     <string name="sku">Артикул</string>
 
+    <!-- Login fragment -->
+    <string name="email_address">Электронная почта</string>
+    <string name="user_password">Пароль</string>
+    <string name="sign_in">Войти</string>
+    <string name="invalid_password">Неверный пароль</string>
+    <string name="field_required">Поле не заполнено</string>
+    <string name="invalid_email">Неверный email</string>
+
+
+    <!-- Register fragment -->
+    <string name="first_name">Ваше имя</string>
+    <string name="last_name">Ваша фамилия</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="user_consent_text">Настоящим даю согласие на обработку моих персональных данных в порядке, установленном Федеральным законом РФ от 27.07.2006 № 152-ФЗ «О персональных данных».</string>
+    <string name="register_in">Зарегистрироваться</string>
+    <!-- Profile fragment -->
+    <string name="phone_number">Телефон</string>
+    <string name="invalid_phone">Неверный телефон</string>
 
 </resources>
