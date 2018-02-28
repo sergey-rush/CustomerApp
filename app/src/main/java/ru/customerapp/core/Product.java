@@ -12,7 +12,7 @@ public class Product {
     public int Quantity;
     public String Price;
     public String Discount;
-    public String Sku;
+    public String Barcode;
     public String BoxSize;
     public String ImageUrl;
     public byte[] Picture;

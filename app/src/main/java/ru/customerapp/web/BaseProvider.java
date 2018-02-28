@@ -52,7 +52,7 @@ public class BaseProvider {
             product.Quantity = item.getInt("Quantity");
             product.Price = item.getString("Price");
             product.Discount = item.getString("Discount");
-            product.Sku = item.getString("Sku");
+            product.Barcode = item.getString("Barcode");
             product.BoxSize = item.getString("BoxSize");
             product.ImageUrl = item.getString("ImageUrl");
             productList.add(product);

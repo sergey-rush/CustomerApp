@@ -81,7 +81,7 @@ public abstract class DataAccess extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE Sections(Id INTEGER PRIMARY KEY AUTOINCREMENT, SectionId INTEGER, ParentId INTEGER, ChildIndex INTEGER, Name TEXT, QueryString TEXT)");
-        db.execSQL("CREATE TABLE Products(Id INTEGER PRIMARY KEY AUTOINCREMENT, SectionId INTEGER, ProductUid TEXT, Name TEXT, Quantity INTEGER, Price TEXT, Discount TEXT, Sku TEXT, BoxSize TEXT, ImageUrl TEXT, Picture BLOB)");
+        db.execSQL("CREATE TABLE Products(Id INTEGER PRIMARY KEY AUTOINCREMENT, SectionId INTEGER, ProductUid TEXT, Name TEXT, Quantity INTEGER, Price TEXT, Discount TEXT, Barcode TEXT, BoxSize TEXT, ImageUrl TEXT, Picture BLOB)");
         db.execSQL("CREATE TABLE Orders(Id INTEGER PRIMARY KEY AUTOINCREMENT, OrderUid TEXT, OrderStatus INTEGER, Created TEXT)");
         db.execSQL("CREATE TABLE OrderItems(Id INTEGER PRIMARY KEY AUTOINCREMENT, OrderId INTEGER, ProductUid TEXT, OrderStatus INTEGER, Quantity INTEGER, Amount TEXT)");
     }

@@ -77,7 +77,7 @@ public class ProductFragment extends Fragment implements View.OnClickListener{
         TextView tvDiscount = (TextView) view.findViewById(R.id.tvDiscount);
         TextView tvPrice = (TextView) view.findViewById(R.id.tvPrice);
         TextView tvBoxSize = (TextView) view.findViewById(R.id.tvBoxSize);
-        TextView tvSku = (TextView) view.findViewById(R.id.tvSku);
+        TextView tvBarcode = (TextView) view.findViewById(R.id.tvBarcode);
         ImageView ivAddToCart = (ImageView) view.findViewById(R.id.ivAddToCart);
         ivAddToCart.setOnClickListener(this);
 
@@ -86,7 +86,7 @@ public class ProductFragment extends Fragment implements View.OnClickListener{
 
         tvProductName.setText(product.Name);
         tvBoxSize.setText(product.BoxSize);
-        tvSku.setText(product.Sku);
+        tvBarcode.setText(product.Barcode);
 
         String productPrice = appContext.getOriginalPrice(product);
         tvPrice.setText(productPrice);

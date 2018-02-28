@@ -108,7 +108,7 @@ public class DataProvider extends DataAccess {
         Product product = null;
         Cursor cursor = null;
         try {
-            cursor = db.rawQuery("SELECT Id, SectionId, ProductUid, Name, Quantity, Price, Discount, Sku, BoxSize, ImageUrl, Picture FROM Products WHERE Id = ?", new String[]{String.valueOf(id)});
+            cursor = db.rawQuery("SELECT Id, SectionId, ProductUid, Name, Quantity, Price, Discount, Barcode, BoxSize, ImageUrl, Picture FROM Products WHERE Id = ?", new String[]{String.valueOf(id)});
             if (cursor.getCount() > 0) {
                 cursor.moveToFirst();
                 product = new Product();
@@ -119,7 +119,7 @@ public class DataProvider extends DataAccess {
                 product.Quantity = cursor.getInt(cursor.getColumnIndex("Quantity"));
                 product.Price = cursor.getString(cursor.getColumnIndex("Price"));
                 product.Discount = cursor.getString(cursor.getColumnIndex("Discount"));
-                product.Sku = cursor.getString(cursor.getColumnIndex("Sku"));
+                product.Barcode = cursor.getString(cursor.getColumnIndex("Barcode"));
                 product.BoxSize = cursor.getString(cursor.getColumnIndex("BoxSize"));
                 product.ImageUrl = cursor.getString(cursor.getColumnIndex("ImageUrl"));
                 product.Picture = cursor.getBlob(cursor.getColumnIndex("Picture"));
@@ -139,7 +139,7 @@ public class DataProvider extends DataAccess {
         List<Product> products = new ArrayList<>();
         Cursor cursor = null;
         try {
-            cursor = db.rawQuery("SELECT Id, SectionId, ProductUid, Name, Quantity, Price, Discount, Sku, BoxSize, ImageUrl, Picture FROM Products WHERE SectionId = ?", new String[]{String.valueOf(sectionId)});
+            cursor = db.rawQuery("SELECT Id, SectionId, ProductUid, Name, Quantity, Price, Discount, Barcode, BoxSize, ImageUrl, Picture FROM Products WHERE SectionId = ?", new String[]{String.valueOf(sectionId)});
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
                 Product product = new Product();
@@ -150,7 +150,7 @@ public class DataProvider extends DataAccess {
                 product.Quantity = cursor.getInt(cursor.getColumnIndex("Quantity"));
                 product.Price = cursor.getString(cursor.getColumnIndex("Price"));
                 product.Discount = cursor.getString(cursor.getColumnIndex("Discount"));
-                product.Sku = cursor.getString(cursor.getColumnIndex("Sku"));
+                product.Barcode = cursor.getString(cursor.getColumnIndex("Barcode"));
                 product.BoxSize = cursor.getString(cursor.getColumnIndex("BoxSize"));
                 product.ImageUrl = cursor.getString(cursor.getColumnIndex("ImageUrl"));
                 product.Picture = cursor.getBlob(cursor.getColumnIndex("Picture"));
@@ -183,7 +183,7 @@ public class DataProvider extends DataAccess {
         contentValues.put("Quantity", product.Quantity);
         contentValues.put("Price", product.Price);
         contentValues.put("Discount", product.Discount);
-        contentValues.put("Sku", product.Sku);
+        contentValues.put("Barcode", product.Barcode);
         contentValues.put("BoxSize", product.BoxSize);
         contentValues.put("ImageUrl", product.ImageUrl);
         int ret = (int) db.insert("Products", null, contentValues);

@@ -55,16 +55,33 @@ public class MainActivity extends AppCompatActivity
         List<Section> sections = dataAccess.getSections();
         AppContext appContext = AppContext.getInstance(context);
         appContext.SectionList = sections;
-        //showFragment(new MainFragment());
-        showFragment(new RegisterFragment());
+        showFragment(new MainFragment());
+        //showFragment(new RegisterFragment());
     }
 
     @Override
     public void onBackPressed() {
+        boolean handled = false;
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+            return;
+        }
+
+        Fragment fragment = getFragmentManager().findFragmentById(R.id.container);
+
+        if (fragment instanceof SectionFragment) {
+            showFragment(new MainFragment());
+            handled = true;
+        }
+
+        if (fragment instanceof ProductFragment) {
+            showFragment(new ProductListFragment());
+            handled = true;
+        }
+
+        if (!handled) {
             super.onBackPressed();
         }
     }
